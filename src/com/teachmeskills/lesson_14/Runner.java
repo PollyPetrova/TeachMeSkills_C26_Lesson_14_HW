@@ -36,15 +36,11 @@ public class Runner {
         String pathToFile = scanner.nextLine();
         File file = new File(pathToFile);
 
-        String[] arrays= Files.readString(Path.of(file.getAbsolutePath())).split("\n");
-        for (String array: arrays) {
-            System.out.println(array+" "+array.length());
-        }
-
         if (!file.exists()) {
             System.out.println("File doesn't exist!");
             return;
         }
+
         try {
             ValidationService.validationService(file);
         } catch (IOException e) {

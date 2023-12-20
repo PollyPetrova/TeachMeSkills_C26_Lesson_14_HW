@@ -3,6 +3,7 @@ package com.teachmeskills.lesson_14.service;
 import com.teachmeskills.lesson_14.exception.CheckContractNumberException;
 import com.teachmeskills.lesson_14.exception.CheckDocumentNumberException;
 import com.teachmeskills.lesson_14.logger.Logger;
+import com.teachmeskills.lesson_14.utils.Utils;
 import com.teachmeskills.lesson_14.validation.Validation;
 
 import java.io.File;
@@ -15,27 +16,27 @@ public class ValidationService {
 
     public static void validationService(File file) throws IOException {
 
-        String[] arrays= Files.readString(Path.of(file.getAbsolutePath())).split("\n");
+        Path path = file.toPath();
+        String[] arrays = Files.readAllLines(path).toArray(new String[0]);
+
         for (String array: arrays) {
 
-            try {
-                Logger.logInfo(new Date(),"Document number on validation");
-                Validation.checkValidationOfDocumentNumber(file);
-                Logger.logInfo(new Date(),"Your document number was checked");
-            }catch (CheckDocumentNumberException e){
-                Logger.errorInfo(new Date(),e.getMessage(), e);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            try {
-                Logger.logInfo(new Date(),"Contact number on validation");
-                Validation.checkValidationOfContract(file);
-                Logger.logInfo(new Date(),"Your contact number was checked");
-            } catch (CheckContractNumberException e) {
-                Logger.errorInfo(new Date(),e.getMessage(), e);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            if (array.startsWith(Utils.DOCNUM)) {
+                try {
+                    Logger.logInfo(new Date(),"Document number on validation");
+                    Validation.checkValidationOfDocumentNumber(array);
+                    Logger.logInfo(new Date(),"Your document number was checked");
+                } catch (CheckDocumentNumberException e) {
+                    Logger.errorInfo(new Date(), e.getMessage(), e);
+                }
+            } else if (array.startsWith(Utils.CONTRACT)) {
+                try {
+                    Logger.logInfo(new Date(), "Contact number on validation");
+                    Validation.checkValidationOfContract(array);
+                    Logger.logInfo(new Date(),"Your contact number was checked");
+                } catch (CheckContractNumberException e) {
+                    Logger.errorInfo(new Date(), e.getMessage(), e);
+                }
             }
 
         }

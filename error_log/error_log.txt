@@ -1,0 +1,20 @@
+Wed Dec 20 22:19:36 MSK 2023 -> The length of the document number must be equal to 15 characters 
+com.teachmeskills.lesson_14.validation.Validation.checkValidationOfDocumentNumber(Validation.java:20)
+com.teachmeskills.lesson_14.service.ValidationService.validationService(ValidationService.java:27)
+com.teachmeskills.lesson_14.Runner.main(Runner.java:52)
+Wed Dec 20 22:19:36 MSK 2023 -> The length of the contract number must be equal to 15 characters 
+com.teachmeskills.lesson_14.validation.Validation.checkValidationOfContract(Validation.java:36)
+com.teachmeskills.lesson_14.service.ValidationService.validationService(ValidationService.java:35)
+com.teachmeskills.lesson_14.Runner.main(Runner.java:52)
+Wed Dec 20 22:19:36 MSK 2023 -> The length of the document number must be equal to 15 characters 
+com.teachmeskills.lesson_14.validation.Validation.checkValidationOfDocumentNumber(Validation.java:20)
+com.teachmeskills.lesson_14.service.ValidationService.validationService(ValidationService.java:27)
+com.teachmeskills.lesson_14.Runner.main(Runner.java:52)
+Wed Dec 20 22:19:36 MSK 2023 -> The length of the contract number must be equal to 15 characters 
+com.teachmeskills.lesson_14.validation.Validation.checkValidationOfContract(Validation.java:36)
+com.teachmeskills.lesson_14.service.ValidationService.validationService(ValidationService.java:35)
+com.teachmeskills.lesson_14.Runner.main(Runner.java:52)
+Wed Dec 20 22:19:36 MSK 2023 -> The length of the contract number must be equal to 15 characters 
+com.teachmeskills.lesson_14.validation.Validation.checkValidationOfContract(Validation.java:36)
+com.teachmeskills.lesson_14.service.ValidationService.validationService(ValidationService.java:35)
+com.teachmeskills.lesson_14.Runner.main(Runner.java:52)
